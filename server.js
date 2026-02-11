@@ -82,7 +82,7 @@ async function buildEvidence(supplementName, drugName) {
   return { supplement: supplementName, drug: drugName, resolved_compound: compoundId, compound_name: compound.name, evidence_items: items, total_evidence_count: items.length, evidence_types: [...new Set(items.map(e => e.type))] };
 }
 
-const server = new Server({ name: "truthstack", version: "2.0.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "truthstack", version: "2.1.0" }, { capabilities: { tools: {} } });
 
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
   tools: [
@@ -91,6 +91,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     { name: "get_compound_info", description: "Get detailed compound profile with interactions, research findings, and aliases.", inputSchema: { type: "object", properties: { compound_id: { type: "string", description: "Compound ID from search_compounds" } }, required: ["compound_id"] } },
     { name: "explain_interaction", description: "Human-readable explanation of WHY an interaction is risky. Returns mechanism, severity, evidence summary.", inputSchema: { type: "object", properties: { supplement: { type: "string", description: "Supplement name" }, drug: { type: "string", description: "Drug name" } }, required: ["supplement", "drug"] } },
     { name: "get_evidence", description: "Raw evidence bundle: FAERS counts, CYP data, research grades, label warnings. For citing sources.", inputSchema: { type: "object", properties: { supplement: { type: "string", description: "Supplement name" }, drug: { type: "string", description: "Drug name" } }, required: ["supplement", "drug"] } },
+    { name: "get_safety_signals", description: "Get FDA adverse event safety signals (CAERS) for a supplement. Returns PRR analysis, signal strength, category alerts for hepatic/cardiac/bleeding/renal risks.", inputSchema: { type: "object", properties: { compound: { type: "string", description: "Supplement name (e.g. turmeric, kava, green_tea_extract)" } }, required: ["compound"] } },
   ]
 }));
 
@@ -120,6 +121,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         if (!args.supplement || !args.drug) return { content: [{ type: "text", text: JSON.stringify({ error: "Provide 'supplement' and 'drug'" }) }], isError: true };
         result = await buildEvidence(args.supplement, args.drug);
         break;
+      case "get_safety_signals":
+        if (!args.compound) return { content: [{ type: "text", text: JSON.stringify({ error: "Provide compound string" }) }], isError: true };
+        result = await vaultFetch("/api/safety/profile/" + encodeURIComponent(args.compound));
+        break;
       default:
         return { content: [{ type: "text", text: `Unknown tool: ${name}` }], isError: true };
     }
@@ -132,6 +137,6 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("TruthStack MCP Server v2 running (5 tools, stdio transport)");
+  console.error("TruthStack MCP Server v2 running (6 tools, stdio transport)");
 }
 main().catch(e => { console.error("Fatal:", e); process.exit(1); });
