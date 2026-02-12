@@ -1,0 +1,4 @@
+mcp-publisher
+.mcpregistry_*
+server.json
+.DS_Store
