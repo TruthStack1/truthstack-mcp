@@ -157,3 +157,7 @@ The registry validates namespace ownership when publishing. E.g. to publish...:
 ## More documentation
 
 See the [documentation](./docs) for more details if your question has not been answered here!
+
+#### AI Agent Marketplace Index And Agent Router | [API Doc](https://www.deepnlp.org/doc/ai_agent_marketplace)
+    [![AI Agent Marketplace and Router Badge](https://www.deepnlp.org/api/ai_agent_marketplace/svg?name=TruthStack1/truthstack-mcp&badge_type=review)](https://www.deepnlp.org/store/ai-agent/ai-agent/pub-truthstack1/truthstack-mcp)
+    
