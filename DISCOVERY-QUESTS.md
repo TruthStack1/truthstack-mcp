@@ -12,11 +12,11 @@ Submit TruthStack MCP server to every directory with rich metadata, health/suppl
 example prompts, and a link to the GitHub repo.
 
 - [ ] **Official MCP Registry** — registry.modelcontextprotocol.io
-  - Tags: health, supplements, drug-interactions, safety, pharmacology
-  - Description: "First supplement-drug interaction safety tool for AI agents"
+  - Tags: health, supplements, drug-interactions, evidence, pharmacology
+  - Description: "First supplement-drug interaction evidence tool for AI agents"
   
 - [ ] **GitHub modelcontextprotocol/servers** — Open PR to add to official list
-  - Category: Health & Safety
+  - Category: Health & Research
   - Include: description, 5 tools listed, example usage
   
 - [ ] **Glama.ai** — MCP server directory
@@ -44,11 +44,11 @@ Working code examples posted where agent developers find tools.
   - README with setup in <5 minutes
   
 - [ ] **LangChain community** — Post example in LangChain Discord/forums
-  - Title: "Supplement safety tool for health agents"
+  - Title: "Supplement evidence tool for health agents"
   - Include working code snippet
   
 - [ ] **CrewAI community** — Post example agent that uses TruthStack
-  - "Health Safety Agent" that checks stacks before recommending
+  - "Health Reference Agent" that checks stacks before recommending
 
 - [ ] **AutoGen/LlamaIndex** — GitHub gist with integration example (week 2)
 
@@ -64,9 +64,9 @@ Find health AI agent repos and suggest TruthStack integration.
 - [ ] Search GitHub: "langchain health" "crewai health" — find health-focused agent projects
 - [ ] Search GitHub: "medication" "drug interaction" "ai agent" — find adjacent projects
 - [ ] For each active repo (>10 stars, recent commits):
-  - Open a constructive issue: "Supplement safety integration available"
+  - Open a constructive issue: "Supplement evidence integration available"
   - Include: what TruthStack does, how to integrate (3 lines), link to example repo
-  - **DO NOT spam.** Only repos where supplement safety is genuinely useful.
+  - **DO NOT spam.** Only repos where supplement evidence is genuinely useful.
 
 **Target: 5-10 constructive GitHub issues/PRs opened**
 
@@ -79,7 +79,7 @@ Technical posts that show up in developer searches.
 - [ ] **Blog post:** "Why your health AI agent needs a real interaction database"
   - Host on truthstack.co/blog or Medium
   - Include the demo contrast (LLM vs API)
-  - Target keywords: "supplement drug interaction API", "health AI agent safety"
+  - Target keywords: "supplement drug interaction API", "health AI agent evidence"
   
 - [ ] **dev.to post:** Technical walkthrough of MCP integration
   - Tags: #ai #health #mcp #agents
@@ -87,11 +87,11 @@ Technical posts that show up in developer searches.
 - [ ] **Reddit r/AI_Agents** — Share the MCP server with context
   - Not promotional — frame as "I built this, feedback welcome"
   
-- [ ] **Hacker News** — "Show HN: Supplement safety API for AI agents"
+- [ ] **Hacker News** — "Show HN: Supplement evidence API for AI agents"
   - Best timing: Tuesday or Wednesday morning US time
   - Lead with the demo contrast (LLM hallucination vs structured API)
   
-- [ ] **X/Twitter thread:** "We built the first supplement safety MCP server. Here's why LLMs can't do this alone."
+- [ ] **X/Twitter thread:** "We built the first supplement evidence MCP server. Here's why LLMs can't do this alone."
   - Tag: @AnthropicAI, @LangChainAI, MCP community accounts
   - Include screenshot of Claude Desktop using TruthStack tools
 

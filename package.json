@@ -1,7 +1,7 @@
 {
   "name": "truthstack-mcp",
-  "version": "2.1.1",
-  "description": "TruthStack MCP Server \u2014 Supplement-drug interaction safety intelligence for AI agents",
+  "version": "2.2.0",
+  "description": "TruthStack MCP Server \u2014 Structured supplement interaction and evidence data for AI agents",
   "type": "module",
   "main": "server.js",
   "scripts": {
@@ -12,15 +12,16 @@
     "zod": "^3.22.0"
   },
   "keywords": [
-    "mcp",
     "supplements",
     "drug-interactions",
     "health",
-    "safety",
+    "evidence",
+    "reference-data",
     "ai-agents",
+    "mcp",
     "truthstack"
   ],
-  "author": "TruthStack Inc.",
+  "author": "TruthStack",
   "license": "MIT",
   "bin": {
     "truthstack-mcp": "./server.js"
